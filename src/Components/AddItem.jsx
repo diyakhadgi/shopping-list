@@ -5,8 +5,12 @@ const AddItem = (props) => {
   const [item, setItem] = useState("")
 
   const addItem = () => {
-    props.onAddingItem(item)
-    setItem("")
+    if (item.length < 1) {
+      alert('Please add an item')
+    } else {
+      props.onAddingItem(item)
+      setItem("")
+    }   
   }
 
 
